@@ -1,19 +1,19 @@
 import mysql.connector
-
+#delete 
+# MYSQL 삭제하기
 
 try:
     # 1. DB에 연결
     connection = get_connection()
-    name = 'Harry'
+    # name = '미애'
+    id = 6
     # date = '2021-12-15'
     # 2. 쿼리문 만들기
-    query = '''insert into test
-                (name)
-                values
-                (%s); '''
+    query = '''delete from test 
+                    where id=%s ; '''
     # 파이썬에서, 튜플만들때, 데이터가 1개인 경우에는, 
     # 콤마, 꼭 써준다.
-    record=(name,)
+    record=(id,)
     # 3. 커넥션으로부터 커서를 가져온다.
     cursor = connection.cursor()
 

@@ -4,12 +4,7 @@ from mysql.connector.errors import Error
 # 연결하는 코드
 # try 라고 나오면, 들여쓰기 되어있는 문장들을 실행하라는 뜻
 try :
-    connection = mysql.connector.connect(
-        host=' 입력 s.amazonaws.com',
-        database = 'streamlit_db',
-        user = 'python_user',
-        password = '2105'
-    )
+    connection = get_connection()
     if connection.is_connected():
         df_info = connection.get_server_info()
         print('MYSQL info', df_info)

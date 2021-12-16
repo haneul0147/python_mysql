@@ -3,13 +3,7 @@ from datetime import datetime
 # 여러개의 데이터를 집어 넣는 경우 
 try:
     # 1. DB에 연결
-    connection = mysql.connector.connect(
-        host='s.amazonaws.com',
-        database = 'streamlit_db',
-        user = 'python_user',
-        password = '2105'
-    )
-   
+    connection = get_connection()
     # 2. 쿼리문 만들기
     current_time = datetime.now()
 
